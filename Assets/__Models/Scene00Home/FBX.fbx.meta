@@ -1,0 +1,220 @@
+fileFormatVersion: 2
+guid: a9d32e348ce7344c19e4612bc2e29c11
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottle
+    second: {fileID: 2100000, guid: 053a05397e8754ccba0131e5c39d5421, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottle 2
+    second: {fileID: 2100000, guid: 05a91d6f0cfcb4c13b2efda8130d54c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottle Cap
+    second: {fileID: 2100000, guid: 31af5b839edc244738d1d32749f1b7ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottle Cap 2
+    second: {fileID: 2100000, guid: 857301d67e4574ac5a926c317b392d88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Counter
+    second: {fileID: 2100000, guid: 02b8457e2a6824509a044d9d1f49c621, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cupboard handle knob
+    second: {fileID: 2100000, guid: e6968dc0c828f4d67bafd8e29d56b9d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gell Bottle
+    second: {fileID: 2100000, guid: af03df2c07d334f5eb531f99a922e2d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gell Cap
+    second: {fileID: 2100000, guid: abd34a83d076846a0abddcfbee729393, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hairbrush
+    second: {fileID: 2100000, guid: dd4f2ffe906c44025861be13b15d3ab7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hairbrush brush
+    second: {fileID: 2100000, guid: 49a340b1f75f94a54aa9747ddfa44020, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kleenex
+    second: {fileID: 2100000, guid: 34a349d6876174044bbc79454c5a81dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kleenex Plastic Cover
+    second: {fileID: 2100000, guid: da9b5b073ac2f42fda4ce6c7062219bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kleenexs Box
+    second: {fileID: 2100000, guid: 87d3013ecd2fb42b79d4259c5404dfbd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal thingy on the handle
+    second: {fileID: 2100000, guid: 442ffcab0d49140e690764f8ad11c0cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shampoo Bottle
+    second: {fileID: 2100000, guid: ea8f8803793f64690b16bf3e47ca063f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shampoo Cap
+    second: {fileID: 2100000, guid: 26d6140a6945b4d2b80fdee0a47a4e01, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Soap
+    second: {fileID: 2100000, guid: 3575e67ac0c5d41c7a55e7d41cdf70d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Toilet Paper
+    second: {fileID: 2100000, guid: b7344e15701914d1eb94ed1d09405568, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Toilet Paper Roll
+    second: {fileID: 2100000, guid: db682c57bb7154045a572b0d57b612d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Toothbrush
+    second: {fileID: 2100000, guid: 67a65198a00564e46ad8bf86fd208c19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Toothbrush brush
+    second: {fileID: 2100000, guid: a67689442cf4f46a1bcd35fd6c963147, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Toothpaste
+    second: {fileID: 2100000, guid: abea6cff217dd43a7a1b1892d76df7af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Toothpaste Cap
+    second: {fileID: 2100000, guid: 26ce00145470047a89f2ecfc3effb5f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Towel
+    second: {fileID: 2100000, guid: ebf8b18277473479f86409471b8061be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Towel Hanger
+    second: {fileID: 2100000, guid: e0e9f1d5182a74e08a8e176ccf1b26f1, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
