@@ -231,7 +231,7 @@ public class UnitySocketClient : MonoBehaviour{
             EraseScreenBlock();
             int blocksNumber = _blocksList.Count;
             if (blocksNumber <= 0){
-                StartCoroutine(ChangeScene());
+                StartCoroutine(ChangeSceneAsync());
                 break;
             }
             yield return new WaitForSeconds(0.03F);
@@ -267,6 +267,15 @@ public class UnitySocketClient : MonoBehaviour{
     IEnumerator ChangeScene(){
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("00Reality");
+    }
+    
+    IEnumerator ChangeSceneAsync(){
+        yield return new WaitForSeconds(3);
+        AsyncOperation async = SceneManager.LoadSceneAsync("00Reality");
+        async.allowSceneActivation = true;
+        while(!async.isDone){
+            yield return null;
+        }
     }
     
     void OnConnectionNumbers(Socket socket, Packet packet, params object[] args){
