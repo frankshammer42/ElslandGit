@@ -12,21 +12,27 @@ public class CutManager : MonoBehaviour
     private float _sizeY;
     private List<Pair2D> _cutPoints = new List<Pair2D>();
     private List<Vector2D> _centerPoints = new List<Vector2D>();
+    public float[] blockCutPointsPercent;
     public float[] blockCutPoints;
-    public int segmentNumber = 6 ;
+    public int segmentNumber;
     public float halfLength;
     public float blockLength;
     public int totalCut = 10;
     public int cutsForEachBlock;
+    //Slow Motion
+    public float slowDownFactor;
+    public float slowDownLength;
+    private bool _startSlowMotion;
     
     void Start(){
-        segmentNumber = 6; 
+        _startSlowMotion = false;
         cutsForEachBlock = totalCut / segmentNumber;
         blockCutPoints = new float[segmentNumber*cutsForEachBlock*4];
+        blockCutPointsPercent = new float[segmentNumber*cutsForEachBlock*4];
         GenerateCutPoints();
         GenerateCutArraysToSend();
-//        GenerateCenterPoints();
-//        GenerateBlockCutPoints();
+        GenerateCenterPoints();
+        GenerateBlockCutPoints();
     }
 
     // Update is called once per frame
@@ -38,25 +44,29 @@ public class CutManager : MonoBehaviour
             _cut = true;
             Debug.Log("Start Cut");
         }
-    }
 
+//        if (_startSlowMotion){
+//            Time.timeScale += (1.0f / slowDownLength) * Time.unscaledDeltaTime; // notice we are using the unscaledDelta now
+//            Time.timeScale = Mathf.Clamp(Time.timeScale, 0, 1);
+//        }
+    }
+    
+    public void DoSlowMotion() {
+        Time.timeScale = slowDownFactor;
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;
+    }
+    
+    
     void Cut(){
+//        DoSlowMotion();
+//        _startSlowMotion = true;
         foreach (var cutPair in _cutPoints){
             List<Slice2D> sliceResult = Slicer2D.LinearSliceAll(cutPair, Slice2DLayer.Create());
             foreach (var slice in sliceResult){
                 List<GameObject> slicedGameObjects = slice.GetGameObjects();
-                float coin = Random.Range(0.0F, 1.0F);
-                if (coin >= 0.5){
-                    Debug.Log("Shit is weird");
-                    foreach (var sg in slicedGameObjects){
-                        sg.GetComponent<Rigidbody2D>().AddForce(transform.up*1.2F, ForceMode2D.Impulse);
-                    }
-                }
-                else{
-                    Debug.Log("Am I here");
-                    foreach (var sg in slicedGameObjects){
-                        sg.GetComponent<Rigidbody2D>().AddForce(transform.up*-1.2F, ForceMode2D.Impulse);
-                    }
+                foreach (var sg in slicedGameObjects){
+                    sg.GetComponent<Rigidbody2D>().AddForce(Random.insideUnitCircle * 20, ForceMode2D.Impulse);
+                    sg.AddComponent<SliceMoveOut>();
                 }
             }
         }
@@ -91,16 +101,25 @@ public class CutManager : MonoBehaviour
                 float xMax = (float) currentCenter.x + halfLength;
                 float xCutStart = Random.Range(xMin, xMax);
                 float xCutEnd = Random.Range(xMin, xMax);
+                float startDist = xCutStart - xMin;
+                float endDist = xCutEnd - xMin;
+                float dist = xMax - xMin;
+                float startPercent = startDist / dist;
+                float endPercent = endDist / dist;
                 blockCutPoints[i * cutsForEachBlock * 4 + j*4] = xCutStart;
-                blockCutPoints[i * cutsForEachBlock * 4 + j*4+1] = xCutStart;
-                blockCutPoints[i * cutsForEachBlock * 4 + j*4+2] = xCutStart;
-                blockCutPoints[i * cutsForEachBlock * 4 + j*4+3] = xCutStart;
-//                blockCutPoints[i, j * 4] = xCutStart;
-//                blockCutPoints[i, j * 4+1] = yMin;
-//                blockCutPoints[i, j * 4+2] = xCutEnd;
-//                blockCutPoints[i, j * 4+3] = yMax;
+                blockCutPoints[i * cutsForEachBlock * 4 + j*4+1] = yMin;
+                blockCutPoints[i * cutsForEachBlock * 4 + j*4+2] = xCutEnd;
+                blockCutPoints[i * cutsForEachBlock * 4 + j*4+3] = yMax;
+                blockCutPointsPercent[i * cutsForEachBlock * 4 + j*4] = startPercent;
+                blockCutPointsPercent[i * cutsForEachBlock * 4 + j*4+1] = yMin;
+                blockCutPointsPercent[i * cutsForEachBlock * 4 + j*4+2] = endPercent;
+                blockCutPointsPercent[i * cutsForEachBlock * 4 + j*4+3] = yMax;
             }
-        }
+        }    
+        GameObject unityClient = GameObject.Find("UnityClient");
+        unityClient.GetComponent<UnitySocketClient>().blockCutPercents = blockCutPointsPercent;
+        unityClient.GetComponent<UnitySocketClient>().blockCutPoints = blockCutPoints;
+        unityClient.GetComponent<UnitySocketClient>().totalBlocks = segmentNumber ;
     }
     
     //Helper Functions for generating cut points
@@ -114,11 +133,11 @@ public class CutManager : MonoBehaviour
         float boundToSendX = xMinBound * -2f;
         float boundToSendY = yMinBound * -2f;
         GameObject unityClient = GameObject.Find("UnityClient");
-//        unityClient.GetComponent<UnitySocketClient>().cutBound = new float[2];
-//        unityClient.GetComponent<UnitySocketClient>().cutBound[0] = boundToSendX;
-//        unityClient.GetComponent<UnitySocketClient>().cutBound[1] = boundToSendY;
-//        unityClient.GetComponent<UnitySocketClient>().xTrainOffset = trainToCut.transform.position.x;
-//        unityClient.GetComponent<UnitySocketClient>().yTrainOffset = trainToCut.transform.position.y;
+        unityClient.GetComponent<UnitySocketClient>().cutBound = new float[2];
+        unityClient.GetComponent<UnitySocketClient>().cutBound[0] = boundToSendX;
+        unityClient.GetComponent<UnitySocketClient>().cutBound[1] = boundToSendY;
+        unityClient.GetComponent<UnitySocketClient>().xTrainOffset = trainToCut.transform.position.x;
+        unityClient.GetComponent<UnitySocketClient>().yTrainOffset = trainToCut.transform.position.y;
         float xMin = minBounds.x - (float)0.02;
         float xMax = maxBounds.x + (float)0.02;
         float yMin = minBounds.y - (float)0.1;
@@ -139,16 +158,16 @@ public class CutManager : MonoBehaviour
     //Generate array of doubles that contains cut points that can sent to server
     private void GenerateCutArraysToSend(){
         int numCutPoints = _cutPoints.Count;
-//        GameObject unityClient = GameObject.Find("UnityClient");
-//        unityClient.GetComponent<UnitySocketClient>().cutPoints = new double[numCutPoints*4];
+        GameObject unityClient = GameObject.Find("UnityClient");
+        unityClient.GetComponent<UnitySocketClient>().cutPoints = new double[numCutPoints*4];
         int counter = 0;
-//        foreach (var cutPoint in _cutPoints){
-//            unityClient.GetComponent<UnitySocketClient>().cutPoints[counter*4] = cutPoint.A.x;
-//            unityClient.GetComponent<UnitySocketClient>().cutPoints[counter*4+1]= cutPoint.A.y;
-//            unityClient.GetComponent<UnitySocketClient>().cutPoints[counter*4+2] = cutPoint.B.x;
-//            unityClient.GetComponent<UnitySocketClient>().cutPoints[counter*4+3] = cutPoint.B.y;
-//            counter++;
-//        }
+        foreach (var cutPoint in _cutPoints){
+            unityClient.GetComponent<UnitySocketClient>().cutPoints[counter*4] = cutPoint.A.x;
+            unityClient.GetComponent<UnitySocketClient>().cutPoints[counter*4+1]= cutPoint.A.y;
+            unityClient.GetComponent<UnitySocketClient>().cutPoints[counter*4+2] = cutPoint.B.x;
+            unityClient.GetComponent<UnitySocketClient>().cutPoints[counter*4+3] = cutPoint.B.y;
+            counter++;
+        }
 //        Debug.Log(unityClient.GetComponent<UnitySocketClient>().cutPoints[0]);
 //        Debug.Log(unityClient.GetComponent<UnitySocketClient>().cutPoints[1]);
 //        Debug.Log(unityClient.GetComponent<UnitySocketClient>().cutPoints[2]);

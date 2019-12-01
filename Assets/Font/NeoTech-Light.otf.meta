@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ef597794c15f94b4190b20608cd0e685
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: NeoTech
+  fontNames:
+  - NeoTech
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d28466a5611f74d20b1184afdbb2fb32, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

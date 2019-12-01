@@ -17,6 +17,6 @@ public class ClientFinder : MonoBehaviour
     }
 
     public void sendCut(){
-//        _unityClient.GetComponent<UnitySocketClient>().SendCut();
+        _unityClient.GetComponent<UnitySocketClient>().SendCut();
     }
 }

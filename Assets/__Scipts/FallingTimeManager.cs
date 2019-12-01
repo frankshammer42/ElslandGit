@@ -15,6 +15,11 @@ public class FallingTimeManager : MonoBehaviour
     }
 
 
+    public void ResumeTimeline()
+    {
+        pd.playableGraph.GetRootPlayable(0).SetSpeed(1f);
+    }
+
     private void Update()
     {
         if (Input.GetKey(KeyCode.A))
