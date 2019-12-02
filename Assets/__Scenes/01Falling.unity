@@ -2801,7 +2801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 5002da5fa1cae4770a874c81acfe1c5b, type: 2}
+  sharedProfile: {fileID: 0}
   isGlobal: 1
   blendDistance: 0
   weight: 1
@@ -3545,12 +3545,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 987400b1d43594aa9ad824361ca4d138,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 313.26184
+      value: 333.1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 987400b1d43594aa9ad824361ca4d138,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -24.772
+      value: -27.4
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 987400b1d43594aa9ad824361ca4d138,
         type: 3}
@@ -10249,7 +10249,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 987400b1d43594aa9ad824361ca4d138,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -78.6
+      value: -60.500023
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 987400b1d43594aa9ad824361ca4d138,
         type: 3}
@@ -12441,7 +12441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FocusTracksTarget: 0
   m_FocusOffset: 0
-  m_Profile: {fileID: 11400000, guid: 5002da5fa1cae4770a874c81acfe1c5b, type: 2}
+  m_Profile: {fileID: 0}
 --- !u!95 &1051004628
 Animator:
   serializedVersion: 3
@@ -22969,7 +22969,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 987400b1d43594aa9ad824361ca4d138,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -467
+      value: -447.7
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 987400b1d43594aa9ad824361ca4d138,
         type: 3}
@@ -46746,6 +46746,7 @@ MonoBehaviour:
   yTrainOffset: 0
   totalBlocks: 0
   totalCut: 7
+  cutTarget: 0
 --- !u!4 &1761597769
 Transform:
   m_ObjectHideFlags: 0
@@ -51728,7 +51729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FocusTracksTarget: 0
   m_FocusOffset: 0
-  m_Profile: {fileID: 11400000, guid: 5002da5fa1cae4770a874c81acfe1c5b, type: 2}
+  m_Profile: {fileID: 0}
 --- !u!114 &1826007976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58880,7 +58881,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087534223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 971.5, y: 26.7, z: -120.3}
+  m_LocalPosition: {x: 988.9, y: 26.7, z: -118.9}
   m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79217,15 +79218,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8296172668892142152}
-  m_LocalRotation: {x: -0, y: 0.9825394, z: -0, w: 0.18605472}
-  m_LocalPosition: {x: 958.3, y: -2.9, z: 14.4}
+  m_LocalRotation: {x: -0, y: 0.9719273, z: -0, w: 0.23528157}
+  m_LocalPosition: {x: 991, y: -2.9, z: 14.7}
   m_LocalScale: {x: 23.806856, y: 23.806856, z: 23.806856}
   m_Children:
   - {fileID: 8511974088096376798}
   - {fileID: 8652380847659238998}
   m_Father: {fileID: 0}
   m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 158.55501, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 152.78401, z: 0}
 --- !u!4 &5007249334766916683
 Transform:
   m_ObjectHideFlags: 0
