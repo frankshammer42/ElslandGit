@@ -5066,14 +5066,14 @@ MonoBehaviour:
     m_Objects: []
   m_InfiniteClipPreExtrapolation: 1
   m_InfiniteClipPostExtrapolation: 1
-  m_InfiniteClipOffsetPosition: {x: 957.87256, y: -2.7, z: 18.381065}
+  m_InfiniteClipOffsetPosition: {x: 957.87256, y: -2.7, z: 9.57}
   m_InfiniteClipOffsetEulerAngles: {x: -0, y: 158.55475, z: 0}
   m_InfiniteClipTimeOffset: 0
   m_InfiniteClipRemoveOffset: 0
   m_InfiniteClipApplyFootIK: 1
   mInfiniteClipLoop: 0
   m_MatchTargetFields: 63
-  m_Position: {x: 0, y: 0, z: 0}
+  m_Position: {x: 36.3, y: 0, z: -3.61}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_AvatarMask: {fileID: 0}
   m_ApplyAvatarMask: 1
