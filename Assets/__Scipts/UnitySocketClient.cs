@@ -191,8 +191,13 @@ public class UnitySocketClient : MonoBehaviour{
         connectionNumberText.enabled = false;
         GameObject blockManager = GameObject.Find("BlockManager");
         _blocksList = blockManager.GetComponent<IntroBlocksManager>().introBlocks;
-        particleSystem.SetActive(true);
+        StartCoroutine(waitForParticle());
         StartCoroutine(DisableInteractionText());
+    }
+
+    IEnumerator waitForParticle(){
+        yield return new WaitForSeconds(6);
+        particleSystem.SetActive(true);
     }
 
 
